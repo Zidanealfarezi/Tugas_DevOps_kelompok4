@@ -1,0 +1,81 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f8fc;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 1rem; /* Memberikan padding untuk layar kecil */
+  box-sizing: border-box;
+}
+
+.income-card {
+  background: linear-gradient(135deg, #ffe8e8, #ffe1f3);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 600px; /* Lebar maksimal untuk laptop */
+  width: 100%; /* Menyesuaikan lebar layar */
+  text-align: center;
+}
+
+.income-card h2 {
+  color: #5e3d6e;
+  margin-bottom: 1.5rem;
+}
+
+.income-total {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: #3a3a3a;
+}
+
+.income-total span {
+  color: #28a745;
+}
+
+.income-card input,
+.income-card select,
+.income-card textarea {
+  width: 80%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.income-card input:focus,
+.income-card select:focus,
+.income-card textarea:focus {
+  border-color: #7b6c93;
+  box-shadow: 0 0 5px rgba(123, 108, 147, 0.5);
+}
+
+.add-income-button {
+  margin-top: 1rem;
+  background-color: #ff577f;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 50%;
+}
+
+.add-income-button:hover {
+  background-color: #ff3b6f;
+}
+
+/* Responsif untuk layar besar (contoh laptop 1024px ke atas) */
+@media (min-width: 1024px) {
+  .income-card {
+    max-width: 100%; /* Lebar card menjadi 50% dari layar besar */
+  }
+}
