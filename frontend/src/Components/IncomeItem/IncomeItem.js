@@ -16,12 +16,12 @@ function IncomeItem({
     type
 }) {
 
-    const categoryIcon = () =>{
+    const categoryIcon = () => {
         switch(category) {
             case 'salary':
                 return money;
             case 'freelancing':
-                return freelance
+                return freelance;
             case 'investments':
                 return stocks;
             case 'stocks':
@@ -62,8 +62,6 @@ function IncomeItem({
         }
     }
 
-    console.log('type', type)
-
     return (
         <IncomeItemStyled indicator={indicatorColor}>
             <div className="icon">
@@ -101,16 +99,23 @@ function IncomeItem({
 const IncomeItemStyled = styled.div`
     background: #FCF6F9;
     border: 2px solid #FFFFFF;
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     width: 100%;
     color: #222260;
-    .icon{
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .icon {
         width: 80px;
         height: 80px;
         border-radius: 20px;
@@ -119,21 +124,37 @@ const IncomeItemStyled = styled.div`
         align-items: center;
         justify-content: center;
         border: 2px solid #FFFFFF;
-        i{
+        transition: background 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background: #EBEBEB;
+            transform: scale(1.1);
+        }
+
+        i {
             font-size: 2.6rem;
         }
     }
 
-    .content{
+    .content {
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: .2rem;
-        h5{
-            font-size: 1.3rem;
-            padding-left: 2rem;
+        gap: .5rem;
+        h5 {
+            font-size: 1.5rem;
+            padding-left: 2.5rem;
             position: relative;
-            &::before{
+            color: var(--primary-color-dark);
+            transition: color 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--primary-color);
+            }
+
+            &::before {
                 content: '';
                 position: absolute;
                 left: 0;
@@ -146,24 +167,41 @@ const IncomeItemStyled = styled.div`
             }
         }
 
-        .inner-content{
+        .inner-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .text{
+
+            .text {
                 display: flex;
-                align-items: center;
-                gap: 1.5rem;
-                p{
+                flex-direction: column;
+                gap: .5rem;
+
+                p {
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
                     color: var(--primary-color);
-                    opacity: 0.8;
+                    opacity: 0.9;
+                    font-size: 1rem;
+                    transition: opacity 0.3s ease;
+
+                    &:hover {
+                        opacity: 1;
+                    }
                 }
             }
         }
     }
+
+    .btn-con {
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 `;
 
-export default IncomeItem
+export default IncomeItem;
+a
